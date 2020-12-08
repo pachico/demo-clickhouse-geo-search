@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+
+  clickhouse:
+    image: yandex/clickhouse-server:20.11.2
+    volumes:
+      - ./resources/clickhouse/init.sql:/docker-entrypoint-initdb.d/init.sql
+    tmpfs:
+      - /var/lib/clickhouse
